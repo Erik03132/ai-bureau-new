@@ -1,195 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Bureau - Glassmorphism</title>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI BUREAU | Архитектура Интеллекта</title>
+    <meta name="description" content="AI BUREAU — Первое агентство по внедрению ИИ-агентов и автоматизации бизнеса мирового уровня." />
+    
+    <!-- Schema.org JSON-LD for Organization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI Bureau",
+      "url": "https://ai-bureau.pro",
+      "logo": "https://ai-bureau.pro/logo.png",
+      "description": "Специализированное инженерное бюро по проектированию автономных интеллектуальных систем и RAG-инфраструктур.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "RU"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "architect@ai-bureau.pro"
+      }
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD for Service (General Example) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "AI Automation and Agent Development",
+      "provider": {
+        "@type": "Organization",
+        "name": "AI Bureau"
+      },
+      "areaServed": "Worldwide",
+      "description": "Разработка автономных AI-агентов, RAG-систем и внедрение локальных LLM."
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD for FAQPage (GEO: E-E-A-T boost) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Что такое AI-агент для бизнеса?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI-агент — это автономная программа на основе LLM (Large Language Model), которая выполняет бизнес-задачи: отвечает клиентам в чатах, обрабатывает заявки из CRM, совершает обзвоны и генерирует отчёты. В отличие от простого чат-бота, агент умеет рассуждать, использовать инструменты и принимать решения."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое RAG-система и зачем она нужна?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "RAG (Retrieval-Augmented Generation) — технология, при которой нейросеть ищет ответ не только в своей памяти, но и в ваших документах, базах данных и каталогах. Это устраняет галлюцинации и позволяет AI точно отвечать по вашим данным: прайс-листам, инструкциям, базам знаний."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Что такое GEO (Generative Engine Optimization)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GEO — оптимизация контента для попадания в ответы нейросетей: Google AI Overviews, Яндекс Нейро, ChatGPT, Perplexity. Если SEO продвигает сайт в поисковой выдаче, то GEO продвигает бренд в ответах AI-ассистентов."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Сколько стоит разработка AI-агента?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Стоимость зависит от сложности: простой Telegram-бот с RAG — от 50 000₽, полноценный AI-агент с CRM-интеграцией и автодозвоном — от 150 000₽. Первый AI-аудит бесплатный."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Schema.org JSON-LD for Person (E-E-A-T: автор/эксперт) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Игорь Васин",
+      "jobTitle": "CTO & AI Architect",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "AI Bureau"
+      },
+      "knowsAbout": ["AI agents", "RAG systems", "LLM", "GEO", "Voice AI", "CRM automation"],
+      "url": "https://ai-bureau.pro"
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --bg-gradient: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            --glass-bg: rgba(255, 255, 255, 0.1);
-            --glass-border: rgba(255, 255, 255, 0.2);
-            --text-main: #ffffff;
-            --text-dim: rgba(255, 255, 255, 0.7);
-            --accent: #00d2ff;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Outfit', sans-serif;
-            background: var(--bg-gradient);
-            background-attachment: fixed;
-            color: var(--text-main);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
-
-        /* Decorative Blobs */
-        .blob {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(0, 210, 255, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
-            filter: blur(50px);
-            z-index: -1;
-            top: -100px;
-            left: -100px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Hero Section */
-        .hero {
-            padding: 160px 0 100px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 64px;
-            font-weight: 600;
-            margin: 0 0 24px;
-            background: linear-gradient(to right, #fff, var(--accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 22px;
-            color: var(--text-dim);
-            max-width: 650px;
-            margin: 0 auto 40px;
-            font-weight: 300;
-        }
-
-        .glass-btn {
-            display: inline-block;
-            padding: 14px 36px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            font-weight: 400;
-            transition: all 0.3s ease;
-        }
-
-        .glass-btn:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            border: 1px solid var(--glass-border);
-            padding: 45px;
-            border-radius: 24px;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-        }
-
-        .card h3 {
-            font-size: 24px;
-            margin: 0 0 15px;
-        }
-
-        .card p {
-            color: var(--text-dim);
-            font-size: 16px;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* Palette Legend */
-        .palette {
-            padding: 60px 0;
-            text-align: center;
-        }
-        .swatch-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .swatch {
-            width: 50px;
-            height: 50px;
-            border-radius: 12px;
-            border: 1px solid var(--glass-border);
-        }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 42px; }
-        }
-    </style>
-</head>
-<body>
-
-    <div class="blob"></div>
-    <div class="blob" style="top: 60%; left: 70%; background: radial-gradient(circle, rgba(147, 112, 219, 0.3) 0%, rgba(0, 0, 0, 0) 70%);"></div>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Flow through intelligence.</h1>
-            <p>Seamless, transparent, and modern AI solutions for the next generation of business.</p>
-            <a href="#" class="glass-btn">Explore the future</a>
-        </div>
-    </section>
-
-    <section class="services">
-        <div class="container">
-            <div class="grid">
-                <div class="card">
-                    <h3>Neural Flow</h3>
-                    <p>Smoothly integrated AI models that feel like a natural part of your team.</p>
-                </div>
-                <div class="card">
-                    <h3>Luminous Insights</h3>
-                    <p>Clarity through data, presented with stunning visual depth.</p>
-                </div>
-                <div class="card">
-                    <h3>Fluid Automation</h3>
-                    <p>Dynamic workflows that adapt to your needs in real-time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="palette">
-        <div class="container">
-            <h3 style="color: var(--text-dim)">Style Palette: Glassmorphism/Modern</h3>
-            <div class="swatch-container">
-                <div class="swatch" style="background: #0f0c29;"></div>
-                <div class="swatch" style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255,255,255,0.2);"></div>
-                <div class="swatch" style="background: #00d2ff;"></div>
-                <div class="swatch" style="background: #9370DB;"></div>
-            </div>
-        </div>
-    </section>
-
-</body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-DR8gyTtY.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-72VSQKPD.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
