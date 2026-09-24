@@ -270,6 +270,61 @@ h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 700; letter-spacing: -0
 .chat-inputbar button:hover:not(:disabled) { background: var(--gold); transform: scale(1.05); }
 .chat-inputbar button:disabled { opacity: 0.3; cursor: not-allowed; }
 
+/* ─── Trust Stats Bar ─── */
+.trust-stats {
+  padding: 3.5rem 10%;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.trust-stats-inner {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.stat-label {
+  font-size: 0.6rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+.stat-separator {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+@media (max-width: 900px) {
+  .trust-stats-inner {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  .stat-separator {
+    display: none;
+  }
+}
+@media (max-width: 480px) {
+  .trust-stats-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   .hero-split { grid-template-columns: 1fr; min-height: auto; padding-top: 6rem; }

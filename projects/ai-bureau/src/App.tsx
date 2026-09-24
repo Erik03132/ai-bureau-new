@@ -27,6 +27,36 @@ const App = () => {
       <div className="progress-bar"></div>
       <div className="noise-overlay"></div>
 
+      {/* Trust Stats Bar */}
+      <div className="trust-stats">
+        <div className="trust-stats-inner">
+          <div className="stat-item">
+            <span className="stat-value">25%</span>
+            <span className="stat-label">Рост прибыли</span>
+          </div>
+          <div className="stat-separator"></div>
+          <div className="stat-item">
+            <span className="stat-value">40%</span>
+            <span className="stat-label">Сокращение издержек</span>
+          </div>
+          <div className="stat-separator"></div>
+          <div className="stat-item">
+            <span className="stat-value">в 3 раза</span>
+            <span className="stat-label">Результативнее</span>
+          </div>
+          <div className="stat-separator"></div>
+          <div className="stat-item">
+            <span className="stat-value">72+</span>
+            <span className="stat-label">Проектов</span>
+          </div>
+          <div className="stat-separator"></div>
+          <div className="stat-item">
+            <span className="stat-value">5+</span>
+            <span className="stat-label">Лет в ИИ</span>
+          </div>
+        </div>
+      </div>
+
       <nav className="nav-bar">
         <div className="nav-brand">
           <svg className="nav-logo" width="28" height="28" viewBox="0 0 100 100">
