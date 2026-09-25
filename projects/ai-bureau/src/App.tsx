@@ -111,22 +111,36 @@ const App = () => {
           <article className="service-item">
             <span className="service-num">02</span>
             <div className="service-body">
-              <h3>Нейронные базы знаний</h3>
-              <p>RAG-системы корпоративного уровня. Семантическая память вашего бизнеса, обеспечивающая мгновенный доступ к экспертизе.</p>
+              <h3>Корпоративные базы знаний (RAG)</h3>
+              <p>Поиск по документам компании в естественном языке, ответы сотрудников на основе регламентов.</p>
             </div>
           </article>
           <article className="service-item">
             <span className="service-num">03</span>
             <div className="service-body">
-              <h3>eCommerce интеллект</h3>
-              <p>Автоматизация товарных матриц и SEO-доминирования на маркетплейсах через масштабируемую генерацию на базе LLM.</p>
+              <h3>Автоматизация документооборота</h3>
+              <p>Обработка счетов, договоров, накладных — извлечение данных, маршрутизация, согласование.</p>
             </div>
           </article>
           <article className="service-item">
             <span className="service-num">04</span>
             <div className="service-body">
-              <h3>Private model ops</h3>
-              <p>Развертывание локальных моделей внутри закрытого периметра компании для абсолютной безопасности данных.</p>
+              <h3>Чат-боты и поддержка клиентов</h3>
+              <p>AI-помощники для отдела продаж и поддержки — ответы 24/7, квалификация лидов.</p>
+            </div>
+          </article>
+          <article className="service-item">
+            <span className="service-num">05</span>
+            <div className="service-body">
+              <h3>Развертывание локальных моделей</h3>
+              <p>Private LLM — безопасные модели внутри корпоративной сети без отправки данных наружу.</p>
+            </div>
+          </article>
+          <article className="service-item">
+            <span className="service-num">06</span>
+            <div className="service-body">
+              <h3>AI-аудит и внедрение</h3>
+              <p>Диагностика процессов, подбор сценариев, план внедрения под конкретный бизнес.</p>
             </div>
           </article>
         </div>
